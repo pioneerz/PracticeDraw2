@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -14,6 +16,12 @@ import com.hencoder.hencoderpracticedraw2.R;
 public class Practice07ColorMatrixColorFilterView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Bitmap bitmap;
+
+    float[] src = new float[]{
+            1,2,3,4,5,
+            1,2,3,4,5,
+            1,2,3,4,5,
+            1,2,3,4,5};
 
     public Practice07ColorMatrixColorFilterView(Context context) {
         super(context);
@@ -32,6 +40,12 @@ public class Practice07ColorMatrixColorFilterView extends View {
 
         // 使用 setColorFilter() 设置一个 ColorMatrixColorFilter
         // 用 ColorMatrixColorFilter.setSaturation() 把饱和度去掉
+
+        ColorMatrix matrix = new ColorMatrix(src);
+        matrix.setSaturation(0);
+        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+        paint.setColorFilter(filter);
+
     }
 
     @Override
