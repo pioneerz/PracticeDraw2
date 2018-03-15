@@ -10,6 +10,9 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * @author Administrator
+ */
 public class Practice02RadialGradientView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
